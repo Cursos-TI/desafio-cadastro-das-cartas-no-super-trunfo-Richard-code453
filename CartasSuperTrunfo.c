@@ -3,18 +3,11 @@
 int main(){
 // Declamos as variaveis das cartas
 
-// Variaveis da carta 1
+// Variaveis das cartas
 
-int populacao1, turistico1;
-float area1, pib1;
-char estado1[50], cidade1[50], codigo1[20];
-
-// Variaveis da carta 2
-
-int populacao2, turismo2;
-float area2, pib2;
-char estado2[100], cidade2[100], codigo2[20];
-
+float area1, pib1, area2, pib2, populacao1, populacao2, densidade1, densidade2, percapita1, percapita2;
+int turistico1, turismo2;
+char estado1[50], cidade1[50], codigo1[20], estado2[50], cidade2[50], codigo2[20];
 
 // cadastro da carta 1
 
@@ -23,75 +16,85 @@ char estado2[100], cidade2[100], codigo2[20];
 printf("\nCARTA 01\n");
 // A função (printf), imprime tudo que estiver dentro dela
 // A função (scanf) escaneia as variaveis e gera um resultado
-printf("\nDigite o codigo da carta:\n");
+printf("\nCodigo da carta (Ex: A01): \n");
 scanf("%s", codigo1);
 
-printf("Digite a cidade: \n");
+printf("Cidade: \n");
 scanf("%s", &cidade1);
 
-printf("Digite a letra inicial do estado (A-H): \n");
-scanf("%s", estado1);
+printf("Letra inicial do estado (A-H): \n");
+scanf("%s", &estado1);
 
-printf("Digite a polução da cidade: \n");
-scanf("%d", &populacao1);
+printf("Polução da cidade: \n");
+scanf("%f", &populacao1);
 
-printf("Digite o PIB, em bilhões de Reais: \n");
+printf("PIB (bilhões de Reais: \n");
 scanf("%f", &pib1);
 
-printf("Digite a area da cidade: \n");
+printf("Area da cidade (Km²): \n");
 scanf("%f", &area1);
 
-printf("Digite a quantidade de pontos turisticos da cidade: \n");
+printf("Quantidade de pontos turisticos da cidade: \n");
 scanf ("%d", &turistico1);
+
+densidade1 = (populacao1 / area1);
+percapita1 = (pib1 / populacao1);
 
 // Cornfirmar as inforações da carta 1
 
-printf("\nConfirme as informações da carta 1\n");
+printf("\nInformações da carta 1\n");
 
 printf("\nO código da carta é: %s\n", codigo1);
-printf("A cidade é: %s\n", cidade1);
-printf("A letra inicial do estado é: %s\n", estado1);
-printf("A população é: %d\n", populacao1);
-printf("o PIB é: %f Bilhões de reais\n", pib1);
-printf("A área da sua cidade é: %f Km²\n", area1);
-printf("A quantidade de pontos turisticos é: %d\n", turistico1);
+printf("Cidade: %s\n", cidade1);
+printf("Letra inicial do estado: %s\n", estado1);
+printf("População: %f\n", populacao1);
+printf("PIB: R$ %.1f bilhões de reais\n", pib1);
+printf("Area da sua cidade: %.2f Km²\n", area1);
+printf("Pontos turisticos: %d\n", turistico1);
+printf("Densidade populacional: %f\n", densidade1);
+printf("Pib Per Capita: %f\n", percapita1);
 
 // Cadastro da carta 2
 
 printf("\nCARTA 02\n");
 
-printf("\nDigite o codigo da carta:\n");
+printf("\nCodigo da carta (Ex: A01):\n");
 scanf("%s", codigo2);
 
-printf("Digite a cidade: \n");
+printf("Cidade: \n");
 scanf("%s", cidade2);
 
-printf("Digite a letra inicial do estado (A-H): \n");
+printf("Letra inicial do estado (A-H): \n");
 scanf("%s", estado2);
 
-printf("Digite a polução da cidade: \n");
-scanf("%d", &populacao2);
+printf("Polução da cidade: \n");
+scanf("%f", &populacao2);
 
-printf("Digite o PIB, em bilhões de reais \n");
+printf("PIB (bilhões de reais): \n");
 scanf("%f", &pib2);
 
-printf("Digite a area da cidade: \n");
+printf("Area da cidade (Km²): \n");
 scanf("%f", &area2);
 
-printf("Digite a quantidade de pontos turisticos da cidade: \n");
+printf("Quantidade de pontos turisticos da cidade: \n");
 scanf ("%d", &turismo2);
+
+populacao2 = (populacao2 / area2);
+percapita2 = (pib2 / populacao2);
 
 // Confirmar as informações da carta 2
 
-printf("\nConfirme as informações da carta 2\n");
+printf("\nInformacoes da carta 2\n");
 
-printf("\nO código da carta é: %s\n", codigo2);
-printf("A cidade é: %s\n", cidade2);
-printf("A letra inicial do estado é: %s\n", estado2);
-printf("A população é: %d\n", populacao2);
-printf("o PIB é: %f Bilhões de reais\n", pib2);
-printf("A área da sua cidade é: %f Km²\n", area2);
-printf("A quantidade de pontos turisticos é: %d\n", turismo2);
+printf("\nCódigo da carta: %s\n", codigo2);
+printf("Cidade: %s\n", cidade2);
+printf("Letra inicial do estado: %s\n", estado2);
+printf("População: %f\n", populacao2);
+printf("PIB: R$ %f bilhões de reais\n", pib2);
+printf("Area da cidade: %.3f Km²\n", area2);
+printf("Pontos turisticos: %d\n", turismo2);
+printf("Densidade populacional: %f\n", densidade2);
+printf("Pib Per Capta: %f\n", percapita2);
 
 return 0;
 }
